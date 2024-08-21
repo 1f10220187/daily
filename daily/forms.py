@@ -1,5 +1,7 @@
 from django import forms
+from .models import Daily
 
-class DailyForm(forms.Form):
-    title = forms.CharField(max_length=50)
-    content = forms.CharField(max_length=1000)
+class DailyForm(forms.ModelForm):
+    class Meta:
+        model = Daily
+        fields = ['title', 'content']

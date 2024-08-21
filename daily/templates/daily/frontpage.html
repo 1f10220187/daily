@@ -8,5 +8,14 @@
         <h1>Daily</h1>
         <h2>今日はどんな1日でしたか？</h2>
         <h3><a href="{% url 'create_daily' %}">新しい日記を作成</a></h3>
+        <ul>
+            {% for daily in dailies %}
+            <li>
+                <h2>{{ daily.title }}</h2>
+                <p>{{ daily.content }}</p>
+                <p>{{ daily.created_at }}</p>
+            </li>
+            {% endfor %}
+        </ul>
     </body>
 </html>
