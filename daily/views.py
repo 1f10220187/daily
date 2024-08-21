@@ -8,7 +8,7 @@ def frontpage(request):
     dailies=Daily.objects.all()
     return render(request,"daily/frontpage.html",{"dailies":dailies})
 
-def create_entry(request):
+def create_daily(request):
     if request.method == "POST":
         form = DailyForm(request.POST)
         if form.is_valid():
