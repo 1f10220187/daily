@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .forms import DailyForm
 from .models import Daily
@@ -20,3 +20,11 @@ def create_daily(request):
     else:
         form = DailyForm()
     return render(request, "daily/create.html",{"form":form})
+
+def delete(request,id):
+    daily = get_object_or_404(Daily,id=id)
+    if request.method=='POST':
+        daily.delete()
+        return redirect(frontpage)
+    dailies=Daily.objects.all()
+    return render(request,"daily/frontpage.html",{"dailies":dailies})
