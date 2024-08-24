@@ -11,8 +11,7 @@
         <ul>
             {% for daily in dailies %}
             <li>
-                <h2>{{ daily.title }}</h2>
-                <p>{{ daily.content }}</p>
+                <h2><a href="{% url 'detail' daily.id %}">{{ daily.title }}</a></h2>
                 <p>{{ daily.created_at }}</p>
                 <form action="{% url 'delete' daily.id %}" method="post" onsubmit="return confirmDelete();">
                     {% csrf_token %}

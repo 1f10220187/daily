@@ -28,3 +28,7 @@ def delete(request,id):
         return redirect(frontpage)
     dailies=Daily.objects.all()
     return render(request,"daily/frontpage.html",{"dailies":dailies})
+
+def detail(request,id):
+    daily = get_object_or_404(Daily,id=id)
+    return render(request,'daily/detail.html',{'daily':daily})
