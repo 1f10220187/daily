@@ -5,6 +5,12 @@
     <title>日記詳細ページ</title>
 </head>
 <body>
-    
+    <h1>{{ daily.title }}</h1>
+    <br>
+    <a>{{ daily.created_at }}</a>
+    <br>
+    <a>{{ daily.content }}</a>
+    <br>
+    <a href="{% url 'frontpage' %}">Top</a>
 </body>
 </html>
