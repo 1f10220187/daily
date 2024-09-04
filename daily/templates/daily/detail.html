@@ -12,5 +12,19 @@
     <a>{{ daily.content }}</a>
     <br>
     <a href="{% url 'frontpage' %}">Top</a>
+    <h2>コメント</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">保存</button>
+    </form>
+    {% for comment in comments %}
+    <p>{{ comment.text }}</p>
+    <p>{{ comment.created_at }}</p>
+    <form action="{% url 'delete_comment' comment.id %}" method="post" onsubmit="return confirm('本当に削除しますか？');">
+        {% csrf_token %}
+        <button type="submit">削除</button>
+    </form>
+    {% endfor %}
 </body>
 </html>

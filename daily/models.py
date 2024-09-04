@@ -10,3 +10,11 @@ class Daily(models.Model):
 
     def __str__(self):
         return self.title
+    
+class Comment(models.Model):
+    daily = models.ForeignKey(Daily, on_delete=models.CASCADE)
+    text=models.TextField(default=None)
+    created_at=models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.text
