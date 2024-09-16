@@ -1,0 +1,26 @@
+#title{
+    font-family: cursive;
+    font-size: 300%;
+}
+
+.custom-border {
+    border-bottom: 4px solid #007bff; /* 下線の太さを4px、色を#007bff（青）に設定 */
+   
+}
+.outer-background{
+    /*background-color: rgba(106, 180, 218, 0.114);*/ /* 余白部分の背景色 */
+}
+
+.container-fluid{
+   padding-left: 10%;
+   padding-right: 10%;
+}
+body{
+    background-color: rgba(0, 170, 255, 0.114);
+}
+
+#list{
+    list-style: none;
+    padding: 0;
+    margin:0;
+}
