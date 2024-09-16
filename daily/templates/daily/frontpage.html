@@ -8,6 +8,14 @@
         <h1>Daily</h1>
         <h2>今日はどんな1日でしたか？</h2>
         <h3><a href="{% url 'create_daily' %}">新しい日記を作成</a></h3>
+        {% if current_sort == 'desc' %}
+        <a href="?sort=asc">古い順</a>
+        {% else %}
+        <a href="?sort=desc">新しい順</a>
+        {% endif %}
+
+        <a href="?sort=comments">コメント多い順</a>
+        <a href="?sort=length">文字数多い順</a>
         <ul>
             {% for daily in dailies %}
             <li>

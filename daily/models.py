@@ -12,7 +12,7 @@ class Daily(models.Model):
         return self.title
     
 class Comment(models.Model):
-    daily = models.ForeignKey(Daily, on_delete=models.CASCADE)
+    daily = models.ForeignKey(Daily, on_delete=models.CASCADE,related_name='comments')
     text=models.TextField(default=None)
     created_at=models.DateTimeField(auto_now_add=True)
 
